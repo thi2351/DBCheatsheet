@@ -1,0 +1,169 @@
+\cheatbox{Ch3. Relational Data Model}{\textStrech}{
+	\subsubsection*{1. Data Model}
+	
+	A \textbf{data model} consists of three components:
+	\textbf{data structures}, \textbf{operations}, and \textbf{integrity constraints}.
+	
+	\paragraph*{Data Structures}
+	In the relational data model, data is represented using \textbf{relations}.
+	
+	An \textbf{$n$-ary relation} $R$ defined on domains
+	$S_1, S_2, \dots, S_n$ is a subset of their Cartesian product:
+	\[
+	R \subseteq S_1 \times S_2 \times \cdots \times S_n
+	\]
+	
+	Each row of $R$ is an \textbf{$n$-tuple}:
+	\[
+	t = \langle v_1, v_2, \dots, v_n \rangle,
+	\quad v_i \in S_i
+	\]
+	
+	\textbf{Inherent (implicit) properties}:
+	\begin{itemize}
+		\item Rows represent $n$-tuples; ordering of rows is immaterial.
+		\item All rows are distinct.
+		\item Column ordering is significant and corresponds to
+		$S_1, S_2, \dots, S_n$.
+		\item Each column is labeled by an \textbf{attribute} indicating its domain.
+	\end{itemize}
+	
+	\textbf{Degree and Cardinality}:
+	\begin{itemize}
+		\item \textbf{Degree}: number of attributes ($n$).
+		\item \textbf{Cardinality}: number of tuples ($|R|$).
+	\end{itemize}
+	
+	\paragraph*{Operations}
+	Operations specify how data can be retrieved and manipulated.
+	Core relational algebra operators:
+	\begin{itemize}
+		\item \textbf{Selection} ($\sigma$),
+		\textbf{Projection} ($\pi$),
+		\textbf{Union} ($\cup$),
+		\textbf{Set Difference} ($-$),
+		\textbf{Cartesian Product} ($\times$),
+		\textbf{Join} ($\bowtie$).
+	\end{itemize}
+	Relational operators satisfy the \textbf{closure property}.
+	
+	\paragraph*{Integrity Constraints}
+	Integrity constraints define valid database states:
+\begin{itemize}
+	\item \textbf{Domain constraint}: attribute values must belong to the domain  
+	(e.g., Age $\ge 0$).
+	
+	\item \textbf{Key constraint}: a key is a \textbf{minimal superkey};
+	key values must be unique  
+	(e.g., StudentID identifies STUDENT).
+	
+	\item \textbf{Constraints on nulls}: specify whether NULL values are permitted
+	for attributes.
+	
+	\item \textbf{Entity integrity constraint}: primary key attributes
+	cannot have NULL values.
+	
+	\item \textbf{Referential integrity constraint}: foreign key values must reference
+	a primary key value or be NULL  
+	(e.g., STUDENT.DeptID $\rightarrow$ DEPARTMENT.DeptID).
+\end{itemize}
+
+}
+
+\cheatbox{Ch3. Relational Data Model}{\textStrech}{
+	\subsubsection*{2. Data model mapping}
+	\begin{enumerate}
+		\item \textbf{Map Regular (Strong) Entity Types}:  
+		Create a relation for each strong entity type; include all simple attributes.
+		Primary key = entity key.
+		
+		\item \textbf{Map Weak Entity Types}:  
+		Create a relation for the weak entity including its simple attributes.
+		Primary key = (partial key + primary key of owner).
+		Owner key is a foreign key.
+		
+		\item \textbf{Map Binary 1:1 Relationships}:  
+		Choose one relation (prefer total participation) and include the primary key
+		of the other as a foreign key; add relationship attributes.
+		
+		\item \textbf{Map Binary 1:N Relationships}:  
+		Include the primary key of the 1-side as a foreign key in the N-side relation;
+		add relationship attributes to the N-side.
+		
+		\item \textbf{Map Binary M:N Relationships}:  
+		Create a new relation whose primary key is the combination of the primary keys
+		of participating entities; include relationship attributes.
+		
+		\item \textbf{Map Multivalued Attributes}:  
+		Create a new relation with attributes (attribute value + owner primary key).
+		Primary key = both attributes.
+		
+		\item \textbf{Map n-ary Relationships ($n > 2$)}:  
+		Create a new relation including primary keys of all participating entities
+		as foreign keys; primary key is their combination.
+		
+		\item \textbf{Map Specialization / Generalization}:  
+		Use one of the following:
+		\begin{itemize}
+			\item Superclass + subclass relations
+			\item Single relation with type attribute
+			\item Multiple relations for subclasses only
+		\end{itemize}
+		
+		\item \textbf{Map Categories (Union Types)}:  
+		Create a relation with a surrogate key and foreign keys referencing
+		each superclass; enforce membership constraint.
+	\end{enumerate}
+}
+
+\cheatbox{Ch3. Relational Data Model}{\textStrech}{
+	\subsubsection*{3. Relational Algebra}
+	\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|p{1.75cm}|p{4.0cm}|p{1.25cm}|}
+	\hline
+	\textbf{Operation} & \textbf{Purpose} & \textbf{Notation} \\
+	\hline
+	SELECT &
+	Selects all tuples that satisfy the selection condition from a relation $R$. &
+	\\
+	\hline
+	PROJECT &
+	Produces a new relation with only some of the attributes of $R$, and removes duplicate tuples. &
+	\\
+	\hline
+	THETA JOIN &
+	Produces all combinations of tuples from $R_1$ and $R_2$ that satisfy the join condition. &
+	\\
+	\hline
+	EQUIJOIN &
+	Produces all combinations of tuples from $R_1$ and $R_2$ that satisfy a join condition with only equality comparisons. &
+	\\
+	\hline
+	NATURAL JOIN &
+	Same as EQUIJOIN except that the join attributes of $R_2$ are not included in the resulting relation; if the join attributes have the same names, they do not have to be specified at all. &
+	\\
+	\hline
+	UNION &
+	Produces a relation that includes all the tuples in $R_1$ or $R_2$ or both $R_1$ and $R_2$; $R_1$ and $R_2$ must be union compatible. &
+	\\
+	\hline
+	INTERSECTION &
+	Produces a relation that includes all the tuples in both $R_1$ and $R_2$; $R_1$ and $R_2$ must be union compatible. &
+	\\
+	\hline
+	DIFFERENCE &
+	Produces a relation that includes all the tuples in $R_1$ that are not in $R_2$; $R_1$ and $R_2$ must be union compatible. &
+	\\
+	\hline
+	CARTESIAN PRODUCT &
+	Produces a relation that has the attributes of $R_1$ and $R_2$ and includes as tuples all possible combinations of tuples from $R_1$ and $R_2$. &
+	\\
+	\hline
+	DIVISION &
+	Produces a relation $R(X)$ that includes all tuples $t[X]$ in $R_1(Z)$ that appear in $R_1$ in combination with every tuple from $R_2(Y)$, where $Z = X \cup Y$. &
+	\\
+	\hline
+\end{tabular}
+
+
+}

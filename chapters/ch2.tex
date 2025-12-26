@@ -1,0 +1,96 @@
+\cheatbox{Ch2.ERD}{\textStrech}{
+\subsubsection*{1. Overview of DB design process}
+	\includegraphics[width=0.7\linewidth]{figures/2-1}
+\subsubsection*{2. ERD}
+
+\begin{tabular}{|m{1.5cm}|m{1.5cm}|m{3.5cm}|}
+	\hline
+	\textbf{Illustration} & \textbf{Attribute Type} & \textbf{Description} \\
+	\hline
+	\includegraphics[width=0.8\linewidth]{figures/2-2}
+	& Simple Attribute &
+	Has a single, atomic value that cannot be further divided. \\
+	\hline
+	\begin{center}
+	\includegraphics[width=1\linewidth]{figures/2-3}
+	\end{center}
+	& Composite Attribute &
+	Consists of multiple components that can be meaningfully separated. \\
+	\hline
+	\includegraphics[width=1\linewidth]{figures/2-4}
+	& Multi-valued Attribute &
+	May have multiple values for a single entity. May have constrain the number of values allowed for each individual identity. \\
+	\hline
+	\includegraphics[width=1\linewidth]{figures/2-5}
+	& Derived Attribute &
+	Its value is derived from other related attributes rather than stored directly. \\
+	\hline
+	\includegraphics[width=1\linewidth]{figures/2-6}
+	& Complex Attribute &
+	A combination of composite and multi-valued attributes. \\
+	\hline
+	\includegraphics[width=1\linewidth]{figures/2-7}
+	& Key Attribute &
+	An attribute (or set of attributes) whose values uniquely identify each entity in an entity set. \\
+	\hline
+\end{tabular}
+\textbf{Degree} of a relationship type: Number of participating entity types. (recursive is unary)
+
+
+\textbf{Cardinality ratios:} the maximum number of instances an entity can participate in (1:1, 1:n, n:1, n:m).
+
+
+\textbf{Participation:} the minimum number of relationship instances that each entity can participate in. (Total participation: every entity participates in, Partial: some (not every) entities).
+
+\textbf{Attribute of a relationship type:} Relationship types can also have attributes.
+}
+
+\cheatbox{Ch2. ERD}{\textStrech}{
+	\subsubsection*{Weak Entities Type}
+	\begin{itemize}
+		\item A \textbf{weak entity type} does \textbf{not have its own key attribute}.
+		\item Weak entities are \textbf{identified} by an \textbf{owner (identifying) entity type}, and an \textbf{identifying relationship}, together with a \textbf{partial key}.
+		\item A weak entity type has \textbf{total participation}
+		(existence dependency) in its identifying relationship.
+		\item A \textbf{partial key} uniquely identifies weak entities
+		related to the same owner entity.
+	\end{itemize}
+	\subsubsection*{3. EERD}
+	\begin{itemize}
+		\item \textbf{Specialization}:
+		process of defining subclasses of an entity type with
+		\begin{itemize}
+			\item specific attributes,
+			\item specific relationship types.
+		\end{itemize}
+		
+		\item \textbf{Generalization}:
+		reverse abstraction process that
+		\begin{itemize}
+			\item identifies common features of multiple entity types,
+			\item combines them into a single superclass.
+		\end{itemize}
+
+	\end{itemize}
+	\centering
+	\includegraphics[width=0.48\linewidth]{figures/2-9}
+	\hfill
+	\includegraphics[width=0.48\linewidth]{figures/2-8}
+	
+	d: disjoint, o: overlapping
+
+\subsubsection*{Fan trap}
+
+\centering
+\includegraphics[width=0.48\linewidth]{figures/2-10}
+\hfill
+\includegraphics[width=0.48\linewidth]{figures/2-11}
+
+
+\subsubsection*{Chamsp trap}
+\includegraphics[width=0.48\linewidth]{figures/2-12}
+\hfill
+\includegraphics[width=0.48\linewidth]{figures/2-13}
+
+
+}
