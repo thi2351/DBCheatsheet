@@ -1,0 +1,92 @@
+\ProvidesPackage{cheatsheet}
+
+\usepackage[font=scriptsize,skip=0pt]{caption}
+\usepackage{moresize}
+\usepackage{setspace}
+
+\title{Cheat Sheet}
+
+
+\tikzstyle{cheatbox} = [draw=black, fill=white, very thick,
+    rectangle, rounded corners, inner sep=10pt, inner ysep=10pt]
+\tikzstyle{cheatboxTitle} =[fill=black, text=white, font=\bfseries]
+
+\makeatletter
+\newcommand*\bigcdot{\mathpalette\bigcdot@{.5}}
+\newcommand*\bigcdot@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
+\makeatother
+
+\ExplSyntaxOn
+\newcommand\renderCheatsheetTitle[1]{
+    \tl_if_empty:nTF{#1}{}{
+        \begin{center}{\large{\textbf{#1}}}\\
+        \end{center}
+    }
+}
+\ExplSyntaxOff
+
+\ExplSyntaxOn
+% Arg 1: The cheat box title. Can be empty.
+% Arg 2: The stretch (used to fix padding uses with packages).
+% Arg 3: The box's contents
+\newcommand\cheatbox[3]{
+    \begin{tikzpicture}
+        \node [cheatbox] (box){
+            \begin{minipage}{0.3\textwidth}
+                \setstretch{#2}
+                \ssmall
+                #3
+            \end{minipage}
+        };
+            
+        \tl_if_empty:nTF{#1}{}{
+            \node[cheatboxTitle, right=10pt] at (box.north~west) {\tiny #1};
+        }
+    \end{tikzpicture}
+}
+\ExplSyntaxOff
+
+\ExplSyntaxOn
+\newcommand\widecheatbox[3]{% title / stretch / nội dung
+  \begin{tikzpicture}
+    \node[cheatbox] (box){
+      \begin{minipage}{0.55\textwidth}   % cố định gấp đôi
+        \setstretch{#2}
+        \ssmall
+        #3
+      \end{minipage}
+    };
+    \tl_if_empty:nTF{#1}{}{%
+      \node[cheatboxTitle, right=10pt] at (box.north~west) {\tiny #1};
+    }
+  \end{tikzpicture}
+}
+\ExplSyntaxOff
+
+
+\newcommand\cheatsheetstart[2]{
+    \renderCheatsheetTitle{#1}
+    \parskip#2
+    \begin{multicols*}{3}
+}
+
+\ExplSyntaxOn
+% Arg 1: The width
+% Arg 2: The filename
+% Arg 3: The caption. Can be empty.
+\newcommand\cheatboxfigure[3]{
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=#1\linewidth]{#2}
+        \tl_if_empty:nTF{#3}{}{
+            \caption*{#3}
+        }
+    \end{figure}
+}
+\ExplSyntaxOff
+
+% Arg 1: The title of the cheat sheet. Can be empty.
+% Arg 2: The spacing between boxes. Must be a distance unit.
+\newenvironment{cheatsheet}{\cheatsheetstart}{\end{multicols*}}
+
+\endinput

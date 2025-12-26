@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T5]{fontenc}
+\usepackage[vietnamese,english]{babel}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{adjustbox}
+\usepackage{dependencies,formatting,cheatsheet}
+\usepackage{fancyvrb}
+\usepackage{listings}
+\usepackage{xcolor}
+
+% chú ý: không có khoảng trắng trong danh sách các gói
+% To be used for normal cheatbox content
+\newcommand{\textStrech}{1.4}
+% To be used with environments (e.g. amsmath's align) that have spacing issues
+\newcommand{\mathStrech}{0.1}
+
+\begin{document}
+\graphicspath{{figures/}}
+
+\begin{cheatsheet}{DB Cheatsheet}{1pt}
+\include{chapters/ch1}
+\end{cheatsheet}
+
+\end{document}

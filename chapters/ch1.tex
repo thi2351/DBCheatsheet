@@ -1,0 +1,28 @@
+\cheatbox{Ch1. An Overview of Database Systems}{\textStrech}{
+\subsubsection*{1. Databases and File Processing Systems}
+\begin{tabular}{|p{3.5cm}|p{3.5cm}|}
+\hline
+\textbf{File Processing Systems} & \textbf{Database Systems} \\
+\hline
+Data are stored separately for each application & Data are organized centrally in a database \\
+\hline
+Uncontrolled data redundancy & Controlled data redundancy \\
+\hline
+Programs are tightly coupled with data structures & Program--data independence is ensured \\
+\hline
+Difficult to maintain and extend when requirements change & Easy to maintain and extend \\
+\hline
+Data sharing among applications is difficult & Data sharing is supported for multiple users and applications \\
+\hline
+\end{tabular}
+
+\subsubsection*{2. Three-Schema Architecture and Data Independence}
+A database system adopts the three-schema architecture:
+\begin{itemize}[leftmargin=0.5cm, itemsep=0pt, topsep=0pt]
+    \item \textbf{External level}: user views tailored to different user groups.
+    \item \textbf{Conceptual level}: a complete logical description of the entire database.
+    \item \textbf{Internal level}: the physical storage structure of the database.
+\end{itemize}
+
+\includegraphics[width=1\linewidth]{figures/1-1.png}
+}
