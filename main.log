@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.8)  26 DEC 2025 20:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.8)  27 DEC 2025 17:23
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1416,36 +1416,279 @@ Overfull \hbox (2.09277pt too wide) in paragraph at lines 117--118
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 169--169
+Underfull \hbox (badness 10000) in paragraph at lines 167--167
 []|\T5/cmr/m/n/6 NATURAL
  []
 
 
-Overfull \hbox (6.71603pt too wide) in paragraph at lines 169--169
+Overfull \hbox (6.71603pt too wide) in paragraph at lines 167--167
 []|\T5/cmr/m/n/6 INTERSECTION| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 169--169
+Underfull \hbox (badness 10000) in paragraph at lines 167--167
 []|\T5/cmr/m/n/6 CARTESIAN
  []
 
 
-Overfull \hbox (4.78091pt too wide) in paragraph at lines 169--169
+Overfull \hbox (4.78091pt too wide) in paragraph at lines 167--167
 [] 
  []
 
-) (chapters/ch4.tex
-Overfull \hbox (2.09277pt too wide) in paragraph at lines 169--1
+
+Overfull \hbox (2.09277pt too wide) in paragraph at lines 167--168
+[][] 
+ []
+
+
+
+
+
+
+
+
+
+[2]
+<figures/2-15.png, id=51, 533.5935pt x 350.5095pt>
+File: figures/2-15.png Graphic file (type png)
+<use figures/2-15.png>
+Package pdftex.def Info: figures/2-15.png  used on input line 170.
+(pdftex.def)             Requested size: 251.09552pt x 164.94272pt.
+<figures/../figures/2-16.png, id=52, 530.58224pt x 345.08925pt>
+File: figures/../figures/2-16.png Graphic file (type png)
+<use figures/../figures/2-16.png>
+Package pdftex.def Info: figures/../figures/2-16.png  used on input line 172.
+(pdftex.def)             Requested size: 251.09552pt x 163.30827pt.
+<figures/../figures/2-17.png, id=53, 539.616pt x 347.49825pt>
+File: figures/../figures/2-17.png Graphic file (type png)
+<use figures/../figures/2-17.png>
+Package pdftex.def Info: figures/../figures/2-17.png  used on input line 174.
+(pdftex.def)             Requested size: 251.09552pt x 161.69635pt.
+<figures/../figures/2-18.png, id=54, 510.10574pt x 337.86224pt>
+File: figures/../figures/2-18.png Graphic file (type png)
+<use figures/../figures/2-18.png>
+Package pdftex.def Info: figures/../figures/2-18.png  used on input line 176.
+(pdftex.def)             Requested size: 251.09552pt x 166.31177pt.
+<figures/../figures/2-19.png, id=55, 536.60475pt x 353.52075pt>
+File: figures/../figures/2-19.png Graphic file (type png)
+<use figures/../figures/2-19.png>
+Package pdftex.def Info: figures/../figures/2-19.png  used on input line 178.
+(pdftex.def)             Requested size: 251.09552pt x 165.42654pt.
+<figures/../figures/2-20.png, id=56, 517.935pt x 343.2825pt>
+File: figures/../figures/2-20.png Graphic file (type png)
+<use figures/../figures/2-20.png>
+Package pdftex.def Info: figures/../figures/2-20.png  used on input line 180.
+(pdftex.def)             Requested size: 251.09552pt x 166.4237pt.
+<figures/../figures/2-21.png, id=57, 516.7305pt x 257.16075pt>
+File: figures/../figures/2-21.png Graphic file (type png)
+<use figures/../figures/2-21.png>
+Package pdftex.def Info: figures/../figures/2-21.png  used on input line 182.
+(pdftex.def)             Requested size: 251.09552pt x 124.96216pt.
+<figures/../figures/2-22.png, id=58, 534.798pt x 344.487pt>
+File: figures/../figures/2-22.png Graphic file (type png)
+<use figures/../figures/2-22.png>
+Package pdftex.def Info: figures/../figures/2-22.png  used on input line 184.
+(pdftex.def)             Requested size: 251.09552pt x 161.74596pt.
+<figures/../figures/2-24.png, id=59, 531.78674pt x 336.0555pt>
+File: figures/../figures/2-24.png Graphic file (type png)
+<use figures/../figures/2-24.png>
+Package pdftex.def Info: figures/../figures/2-24.png  used on input line 188.
+(pdftex.def)             Requested size: 251.09552pt x 158.67424pt.
+<figures/../figures/2-25.png, id=60, 522.15076pt x 347.49825pt>
+File: figures/../figures/2-25.png Graphic file (type png)
+<use figures/../figures/2-25.png>
+Package pdftex.def Info: figures/../figures/2-25.png  used on input line 190.
+(pdftex.def)             Requested size: 251.09552pt x 167.11009pt.
+<figures/../figures/2-26.png, id=61, 546.24075pt x 411.33675pt>
+File: figures/../figures/2-26.png Graphic file (type png)
+<use figures/../figures/2-26.png>
+Package pdftex.def Info: figures/../figures/2-26.png  used on input line 192.
+(pdftex.def)             Requested size: 251.09552pt x 189.07912pt.
+<figures/../figures/2-27.png, id=62, 539.616pt x 338.4645pt>
+File: figures/../figures/2-27.png Graphic file (type png)
+<use figures/../figures/2-27.png>
+Package pdftex.def Info: figures/../figures/2-27.png  used on input line 194.
+(pdftex.def)             Requested size: 251.09552pt x 157.49281pt.
+<figures/../figures/2-28.png, id=63, 534.19576pt x 346.896pt>
+File: figures/../figures/2-28.png Graphic file (type png)
+<use figures/../figures/2-28.png>
+Package pdftex.def Info: figures/../figures/2-28.png  used on input line 196.
+(pdftex.def)             Requested size: 251.09552pt x 163.057pt.
+<figures/../figures/2-29.png, id=64, 537.207pt x 338.4645pt>
+File: figures/../figures/2-29.png Graphic file (type png)
+<use figures/../figures/2-29.png>
+Package pdftex.def Info: figures/../figures/2-29.png  used on input line 198.
+(pdftex.def)             Requested size: 251.09552pt x 158.20036pt.
+<figures/../figures/2-30.png, id=65, 546.24075pt x 259.56975pt>
+File: figures/../figures/2-30.png Graphic file (type png)
+<use figures/../figures/2-30.png>
+Package pdftex.def Info: figures/../figures/2-30.png  used on input line 200.
+(pdftex.def)             Requested size: 251.09552pt x 119.31639pt.
+<figures/../figures/2-31.png, id=66, 546.24075pt x 349.305pt>
+File: figures/../figures/2-31.png Graphic file (type png)
+<use figures/../figures/2-31.png>
+Package pdftex.def Info: figures/../figures/2-31.png  used on input line 202.
+(pdftex.def)             Requested size: 251.09552pt x 160.56499pt.
+<figures/../figures/2-32.png, id=67, 540.21825pt x 347.49825pt>
+File: figures/../figures/2-32.png Graphic file (type png)
+<use figures/../figures/2-32.png>
+Package pdftex.def Info: figures/../figures/2-32.png  used on input line 204.
+(pdftex.def)             Requested size: 251.09552pt x 161.52138pt.
+<figures/../figures/2-33.png, id=68, 537.207pt x 336.0555pt>
+File: figures/../figures/2-33.png Graphic file (type png)
+<use figures/../figures/2-33.png>
+Package pdftex.def Info: figures/../figures/2-33.png  used on input line 206.
+(pdftex.def)             Requested size: 251.09552pt x 157.07437pt.
+<figures/../figures/2-34.png, id=69, 542.62724pt x 340.8735pt>
+File: figures/../figures/2-34.png Graphic file (type png)
+<use figures/../figures/2-34.png>
+Package pdftex.def Info: figures/../figures/2-34.png  used on input line 208.
+(pdftex.def)             Requested size: 251.09552pt x 157.73473pt.
+<figures/../figures/2-35.png, id=70, 543.2295pt x 334.24875pt>
+File: figures/../figures/2-35.png Graphic file (type png)
+<use figures/../figures/2-35.png>
+Package pdftex.def Info: figures/../figures/2-35.png  used on input line 210.
+(pdftex.def)             Requested size: 251.09552pt x 154.50092pt.
+<figures/../figures/2-36.png, id=71, 534.19576pt x 349.305pt>
+File: figures/../figures/2-36.png Graphic file (type png)
+<use figures/../figures/2-36.png>
+Package pdftex.def Info: figures/../figures/2-36.png  used on input line 212.
+(pdftex.def)             Requested size: 251.09552pt x 164.18935pt.
+<figures/../figures/2-37.png, id=72, 545.03625pt x 342.078pt>
+File: figures/../figures/2-37.png Graphic file (type png)
+<use figures/../figures/2-37.png>
+Package pdftex.def Info: figures/../figures/2-37.png  used on input line 214.
+(pdftex.def)             Requested size: 251.09552pt x 157.59267pt.
+<figures/../figures/2-38.png, id=73, 527.571pt x 354.123pt>
+File: figures/../figures/2-38.png Graphic file (type png)
+<use figures/../figures/2-38.png>
+Package pdftex.def Info: figures/../figures/2-38.png  used on input line 216.
+(pdftex.def)             Requested size: 251.09552pt x 168.54518pt.
+<figures/../figures/2-39.png, id=74, 545.03625pt x 344.487pt>
+File: figures/../figures/2-39.png Graphic file (type png)
+<use figures/../figures/2-39.png>
+Package pdftex.def Info: figures/../figures/2-39.png  used on input line 218.
+(pdftex.def)             Requested size: 251.09552pt x 158.70247pt.
+<figures/../figures/2-40.png, id=75, 539.01375pt x 352.31625pt>
+File: figures/../figures/2-40.png Graphic file (type png)
+<use figures/../figures/2-40.png>
+Package pdftex.def Info: figures/../figures/2-40.png  used on input line 220.
+(pdftex.def)             Requested size: 251.09552pt x 164.1264pt.
+
+
+
+
+
+
+
+
+[3 <./figures/2-15.png> <./figures/../figures/2-16.png> <./figures/../figures/2
+-17.png> <./figures/../figures/2-18.png> <./figures/../figures/2-19.png> <./fig
+ures/../figures/2-20.png> <./figures/../figures/2-21.png> <./figures/../figures
+/2-22.png> <./figures/../figures/2-24.png> <./figures/../figures/2-25.png>]
+
+
+
+
+
+
+
+[4 <./figures/../figures/2-26.png> <./figures/../figures/2-27.png> <./figures/.
+./figures/2-28.png> <./figures/../figures/2-29.png> <./figures/../figures/2-30.
+png> <./figures/../figures/2-31.png> <./figures/../figures/2-32.png> <./figures
+/../figures/2-33.png> <./figures/../figures/2-34.png> <./figures/../figures/2-3
+5.png> <./figures/../figures/2-36.png>]) (chapters/ch4.tex
+LaTeX Font Info:    Trying to load font information for T5+cmtt on input line 5
+3.
+
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/vntex\t5cmtt.fd
+File: t5cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+Overfull \hbox (2.09277pt too wide) in paragraph at lines 53--54
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 133--133
+[]|\T5/cmtt/m/n/6 ALTER TABLE table_name ADD attribute
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 133--133
+[]|\T5/cmtt/m/n/6 ALTER TABLE table_name DROP attribute
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 133--133
+[]|\T5/cmtt/m/n/6 ALTER TABLE table_name ALTER attribute SET
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 133--133
+[]|\T5/cmtt/m/n/6 ALTER TABLE table_name ADD CONSTRAINT
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 133--133
+[]|\T5/cmtt/m/n/6 ALTER TABLE table_name DROP CONSTRAINT
+ []
+
+
+Underfull \hbox (badness 7030) in paragraph at lines 133--133
+[]|\T5/cmr/m/n/6 Modify ref-er-en-tial
+ []
+
+
+Overfull \hbox (2.09277pt too wide) in paragraph at lines 133--134
+[][] 
+ []
+
+<figures/2-41.png, id=103, 548.64975pt x 404.712pt>
+File: figures/2-41.png Graphic file (type png)
+<use figures/2-41.png>
+Package pdftex.def Info: figures/2-41.png  used on input line 135.
+(pdftex.def)             Requested size: 251.09552pt x 185.21877pt.
+<figures/2-42.png, id=104, 552.26324pt x 408.3255pt>
+File: figures/2-42.png Graphic file (type png)
+<use figures/2-42.png>
+Package pdftex.def Info: figures/2-42.png  used on input line 139.
+(pdftex.def)             Requested size: 251.09552pt x 185.6513pt.
+
+
+
+
+
+
+
+
+[5 <./figures/../figures/2-37.png> <./figures/../figures/2-38.png> <./figures/.
+./figures/2-39.png> <./figures/../figures/2-40.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 184--184
+[]\T5/cmtt/m/n/6 SELECT [DISTINCT | ALL]  { * | columnExpression [AS newName] |
+
+ []
+
+
+Overfull \hbox (2.15475pt too wide) in paragraph at lines 184--184
+[]|\T5/cmr/bx/n/6 Execution
+ []
+
+
+Overfull \hbox (7.42142pt too wide) in paragraph at lines 184--184
+[][] 
+ []
+
+) (chapters/ch5.tex
+Overfull \hbox (2.09277pt too wide) in paragraph at lines 184--1
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 169--1
+Underfull \hbox (badness 10000) in paragraph at lines 184--1
 
  []
 
-) (chapters/ch5.tex) (chapters/ch6.tex) (chapters/ch7.tex)
+) (chapters/ch6.tex) (chapters/ch7.tex)
 
 
 
@@ -1453,18 +1696,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 169--1
 
 
 
-[2] (main.aux)
+[6 <./figures/2-41.png> <./figures/2-42.png>] (main.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-10-09>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 22076 strings out of 468251
- 428344 string characters out of 5440056
+ 22422 strings out of 468251
+ 438146 string characters out of 5440056
  827874 words of memory out of 5000000
- 50148 multiletter control sequences out of 15000+600000
- 635870 words of font info for 66 fonts, out of 8000000 for 9000
+ 50489 multiletter control sequences out of 15000+600000
+ 637003 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,18n,131p,429b,1065s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
@@ -1479,10 +1722,12 @@ grams/MiKTeX/fonts/type1/vntex/vnr/vnbx12.pfb><C:/Users/Admin/AppData/Local/Pro
 grams/MiKTeX/fonts/type1/vntex/vnr/vnbx5.pfb><C:/Users/Admin/AppData/Local/Prog
 rams/MiKTeX/fonts/type1/vntex/vnr/vnbx6.pfb><C:/Users/Admin/AppData/Local/Progr
 ams/MiKTeX/fonts/type1/vntex/vnr/vnr10.pfb><C:/Users/Admin/AppData/Local/Progra
-ms/MiKTeX/fonts/type1/vntex/vnr/vnr6.pfb>
-Output written on main.pdf (2 pages, 881041 bytes).
+ms/MiKTeX/fonts/type1/vntex/vnr/vnr6.pfb><C:/Users/Admin/AppData/Local/Programs
+/MiKTeX/fonts/type1/vntex/vnr/vnti7.pfb><C:/Users/Admin/AppData/Local/Programs/
+MiKTeX/fonts/type1/vntex/vnr/vntt8.pfb>
+Output written on main.pdf (6 pages, 3915122 bytes).
 PDF statistics:
- 100 PDF objects out of 1000 (max. 8388607)
+ 176 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 83 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 218 words of extra memory for PDF output out of 10000 (max. 10000000)
 

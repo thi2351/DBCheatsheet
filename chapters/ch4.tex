@@ -1,0 +1,184 @@
+\cheatbox{Ch4. SQL Language}{\textStrech}{
+	\subsubsection*{1. SQL Language}
+\begin{itemize}
+	\item \textbf{Data Definition Language (DDL)}: used to define and modify database schema  
+	(\texttt{CREATE}, \texttt{ALTER}, \texttt{DROP})
+	
+	\item \textbf{Data Manipulation Language (DML)}: used to retrieve and manipulate data  
+	(\texttt{SELECT}, \texttt{INSERT}, \texttt{DELETE}, \texttt{UPDATE})
+	
+	\item \textbf{Data Control Language (DCL)}:
+	\begin{itemize}
+		\item \textit{Access control}: \texttt{GRANT}, \texttt{REVOKE}
+		\item \textit{Transaction control}: \texttt{COMMIT}, \texttt{ROLLBACK}, \texttt{SET AUTOCOMMIT OFF}
+	\end{itemize}
+\end{itemize}
+
+\textbf{Note:} SQL is \textbf{case-insensitive} and is often \textbf{extended by DBMSs} with additional proprietary features.
+\subsubsection*{2. DDL Language}
+\textbf{CREATE SCHEMA} is used to define a logical container (namespace) that groups
+database objects such as tables, views, domains, and constraints.
+It helps organize the database, avoid name conflicts, and support authorization. 
+
+Syntax: \texttt{CREATE SCHEMA schema\_name} \texttt{[AUTHORIZATION user\_name];}
+
+
+\textbf{CREATE TABLE} defines the structure of a relation, including attributes,
+data types, and integrity constraints.
+
+Syntax:
+
+\texttt{CREATE TABLE table\_name (} \\
+\texttt{\quad attribute\_name data\_type [attribute\_constraint],} \\
+\texttt{\quad ...} \\
+\texttt{\quad [table\_constraint]} \\
+\texttt{);}
+
+
+\textbf{CREATE DOMAIN} is used to define a user-defined data type with optional
+constraints that can be reused across multiple tables. It improves consistency
+and reduces redundancy in schema definitions.
+
+\textit{Syntax:}
+
+\texttt{CREATE DOMAIN domain\_name AS data\_type} \\
+\texttt{\quad [DEFAULT default\_value]} \\
+\texttt{\quad [CHECK (VALUE condition)];}
+
+\begin{itemize}[leftmargin=*, itemsep=0pt, topsep=0pt]
+	\item Domain constraints are enforced wherever the domain is used.
+	\item \texttt{VALUE} refers to the attribute value being checked.
+	\item Changing a domain affects all attributes defined using that domain.
+\end{itemize}
+}
+
+\cheatbox{Ch4. SQL Language}{\textStrech}{
+\textbf{Attribute-level constraints}:
+\begin{itemize}[leftmargin=*, itemsep=0pt, topsep=0pt]
+	\item \texttt{NOT NULL}: disallows NULL values for the attribute.
+	\item \texttt{DEFAULT value}: assigns a default value when none is provided.
+	\item \texttt{UNIQUE}: ensures all values in the attribute are distinct.
+	\item \texttt{CHECK(condition)}: restricts attribute values to satisfy a condition.
+	\item \texttt{PRIMARY KEY}: uniquely identifies each tuple and disallows NULLs.
+	\item \texttt{REFERENCES table(attribute)}: enforces referential integrity with a referenced table.
+\end{itemize}
+
+\textbf{Table-level constraints}:
+\begin{itemize}[leftmargin=*, itemsep=0pt, topsep=0pt]
+	\item \texttt{PRIMARY KEY (A, B)}: defines a composite primary key over multiple attributes.
+	\item \texttt{UNIQUE (A, B)}: enforces uniqueness over a combination of attributes.
+	\item \texttt{FOREIGN KEY (A) REFERENCES R(B)}: specifies a foreign key relationship between tables.
+	\item \texttt{CHECK(attr\_name condition)}: restricts tuples based on a condition involving multiple attributes.
+\end{itemize}
+
+\textbf{Referential actions}:
+\begin{itemize}[leftmargin=*, itemsep=0pt, topsep=0pt]
+	\item \texttt{ON DELETE CASCADE}: deletes referencing tuples when the referenced tuple is deleted.
+	\item \texttt{ON DELETE SET NULL}: sets foreign key values to NULL when the referenced tuple is deleted.
+	\item \texttt{ON UPDATE CASCADE}: updates foreign key values when the referenced key is updated.
+	\item \texttt{RESTRICT}: prevents deletion or update of a referenced tuple (default behavior).
+\end{itemize}
+
+
+\textbf{ALTER TABLE} is used to modify the structure of an existing table,
+including attributes, constraints, and referential actions, without recreating
+the table.
+
+\textit{Common operations:}
+
+\begin{tabular}{|p{2.2cm}|p{4.8cm}|}
+	\hline
+	\textbf{Operation} & \textbf{Syntax} \\
+	\hline
+	
+	Add attribute &
+	\texttt{ALTER TABLE table\_name ADD attribute data\_type [constraint];}
+	\\
+	\hline
+	
+	Drop attribute &
+	\texttt{ALTER TABLE table\_name DROP attribute RESTRICT (default)/CASCADE;}
+	\\
+	\hline
+	
+	Modify attribute &
+	\texttt{ALTER TABLE table\_name ALTER attribute SET data\_type;}
+	\\
+	\hline
+	
+	Add constraint &
+	\texttt{ALTER TABLE table\_name ADD CONSTRAINT cname constraint\_definition;}
+	\\
+	\hline
+	
+	Drop constraint &
+	\texttt{ALTER TABLE table\_name DROP CONSTRAINT cname;}
+	\\
+	\hline
+	
+	Modify referential action &
+	\texttt{ALTER TABLE table\_name ADD FOREIGN KEY (A)} \\
+	& \texttt{REFERENCES R(B) ON DELETE CASCADE;}
+	\\
+	\hline
+	
+\end{tabular}
+
+\begin{itemize}[leftmargin=*, itemsep=0pt, topsep=0pt]
+	\item ALTER TABLE affects only the table structure, not existing data values.
+	\item Constraint names are required when dropping constraints.
+	\item Some DBMSs restrict dropping or modifying attributes referenced by foreign keys.
+\end{itemize}
+
+}
+
+\includegraphics[width=1\linewidth]{figures/2-41}
+Note: Có thể tạm hoãn việc kiểm tra ràng buộc cho đến cuối 1 transaction.
+
+
+\includegraphics[width=1\linewidth]{figures/2-42}
+Note: Alter Table lúc drop attribute/constraint cũng có quy tắc tương tự như vậy.
+
+\cheatbox{Ch4. SQL Language}{\textStrech}{
+	\subsubsection*{3. DML Language}
+	\textbf{SELECT STATEMENT}
+	
+	
+	\texttt{SELECT [DISTINCT | ALL]} 
+	\texttt{\quad \{ * | columnExpression [AS newName] | built\_inFunction }
+	\texttt{\quad \quad [ , ... ] \}}
+	
+	\texttt{[FROM TableName | ViewName [alias] [ , ... ]]}
+	
+	\texttt{[WHERE rowCondition]}
+	
+	\texttt{[GROUP BY columnList]} 
+	
+	\texttt{[HAVING groupCondition]}
+	
+	\texttt{[ORDER BY columnList | columnPositionList [ASC | DESC]]}
+	
+	\begin{tabular}{|p{1.2cm}|c|p{4.5cm}|}
+		\hline
+		\textbf{Execution Order} & \textbf{Clause} & \textbf{Meaning} \\
+		\hline
+		1 & FROM &
+		Specifies and joins table(s) or view(s) to be used \\
+		\hline
+		2 & WHERE &
+		Filters rows based on row-level conditions \\
+		\hline
+		3 & GROUP BY &
+		Forms groups of rows having the same grouping column values \\
+		\hline
+		4 & HAVING &
+		Filters groups based on group-level conditions \\
+		\hline
+		5 & SELECT &
+		Specifies the output attributes to be returned \\
+		\hline
+		6 & ORDER BY &
+		Specifies the order of the output \\
+		\hline
+	\end{tabular}
+}
