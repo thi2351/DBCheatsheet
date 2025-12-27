@@ -1,0 +1,91 @@
+\cheatbox{Ch5. Functional Dependencies \& Normalization}{\textStrech}{
+	
+\subsubsection*{Functional Dependencies}
+
+
+\textbf{1. Direct dependency (Fully functional dependency):}  
+All non-key attributes are fully functionally dependent on the primary key, i.e.,
+the primary key determines all other attributes.
+\[
+\text{SSN} \rightarrow \{\text{Name, BDate, Address, DNO}\}
+\]
+
+\textbf{Indirect dependency (Transitive dependency):}  
+A non-key attribute depends on the primary key through another non-key attribute.
+\[
+\text{SSN} \rightarrow \text{DNO}, \quad \text{DNO} \rightarrow \text{DName}
+\]
+
+\textbf{Partial dependency:}  
+A non-key attribute depends on only part of a composite primary key, not the entire key.
+\[
+\{\text{SSN, PNumber}\} \text{ is a composite key}
+\]
+\[
+\text{SSN} \rightarrow \text{EName}, \quad
+\text{PNumber} \rightarrow \{\text{PName, PLocation}\}
+\]
+
+\subsubsection*{2. Inference Rules}
+\textbf{IR1. Reflexivity}:  
+If $Y \subseteq X$, then $X \rightarrow Y$.
+
+\textbf{IR2. Augmentation}:  
+If $X \rightarrow Y$, then $XZ \rightarrow YZ$  
+(where $XZ$ denotes $X \cup Z$).
+
+\textbf{IR3. Transitivity}:  
+If $X \rightarrow Y$ and $Y \rightarrow Z$, then $X \rightarrow Z$.
+
+\textbf{IR4. Decomposition}:  
+If $X \rightarrow YZ$, then $X \rightarrow Y$ and $X \rightarrow Z$.
+
+\textbf{IR5. Union}:  
+If $X \rightarrow Y$ and $X \rightarrow Z$, then $X \rightarrow YZ$.
+
+\textbf{IR6. Pseudotransitivity}:  
+If $X \rightarrow Y$ and $WY \rightarrow Z$, then $WX \rightarrow Z$.
+}
+
+\cheatbox{Ch5. Functional Dependencies \& Normalization}{\textStrech}{
+\subsubsection*{1NF}
+A relation is in \textbf{1NF} if each attribute contains only \textbf{atomic (indivisible) values}, i.e., each row--column intersection
+has exactly one value.
+Composite attributes, multivalued attributes, and nested relations are not allowed.
+
+\includegraphics[width=1\linewidth]{figures/2-43}
+\subsubsection*{2NF}
+A relation is in \textbf{2NF} if it is in 1NF and
+\textbf{all non-prime attributes are fully functionally
+	dependent on the entire primary key}.
+2NF eliminates \textbf{partial dependencies} by decomposing
+the relation based on partial keys.
+
+\includegraphics[width=1\linewidth]{figures/2-44}
+
+}
+
+\cheatbox{Ch5. Functional Dependencies \& Normalization}{\textStrech}{
+	\subsubsection*{3NF}
+A relation schema $R$ is in \textbf{3NF} if it is in 2NF and \textbf{no non-prime attribute is transitively dependent on the primary key}.
+	\includegraphics[width=1\linewidth]{figures/2-45}
+	\includegraphics[width=1\linewidth]{figures/2-46}
+	\subsubsection*{BCNF}
+A relation schema $R$ is in \textbf{BCNF} if for every non-trivial functional
+dependency $X \rightarrow Y$ in $R$, \textbf{$X$ is a superkey}.
+
+BCNF is a stricter form of 3NF and eliminates all anomalies caused by
+functional dependencies, even those involving candidate keys.
+
+}
+\cheatbox{Ch5. Functional Dependencies \& Normalization}{\textStrech}{
+	\subsubsection*{1. Algorithm to find minimal cover F for a set of FDs E}
+	\includegraphics[width=1\linewidth]{figures/2-49}
+	
+	\subsubsection*{2. Algorithm to decompose to 3NF}
+	\includegraphics[width=1\linewidth]{figures/2-48}
+	
+	\subsubsection*{3. Algorithm to decompose to BCNF}
+	\includegraphics[width=1\linewidth]{figures/2-47}
+}
+

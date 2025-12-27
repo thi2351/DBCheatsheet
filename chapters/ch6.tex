@@ -1,0 +1,68 @@
+\cheatbox{Ch6. Data Storages, Indexing Structures for Files}{\textStrech}{
+	\subsubsection*{1. Indexed as Access Paths}
+- A file of entries <field value, pointer to record>.
+- Sparse
+	\includegraphics[width=1\linewidth]{figures/2-50}
+	
+	\subsubsection*{2. Primary Indexed}
+- Sparse
+
+	\includegraphics[width=1\linewidth]{figures/2-52}
+	
+	\includegraphics[width=1\linewidth]{figures/2-51}
+	
+}
+
+
+\cheatbox{Ch6. Data Storages, Indexing Structures for Files}{\textStrech}{
+	\subsubsection*{3. Clustering Index}
+	
+	Defined on an ordered data file, ordered on a 	\textbf{non-key field}.
+	
+	At most one primary index or one clustering index but not both.
+	
+	 \includegraphics[width=0.7\linewidth]{figures/2-53}
+	
+	\subsubsection*{4. Secondary Index}
+	Provide a secondary means of accessing a file, do not affect on physical storage of that file -> file is unordered on indexing field.
+	
+	
+	Indexing feild: secondary key (for unique value), or non-key (for duplicate values).
+	
+	There can by many secondary indexes for the same file.
+	
+	\includegraphics[width=0.7\linewidth]{figures/2-54}
+	
+	Secondary index on nonkey field: One entry for each distinct index field value + an extra level of indirection to handle the multiple pointers.
+	
+	\includegraphics[width=0.7\linewidth]{figures/2-55}
+	
+}
+
+\cheatbox{Ch6. Data Storages, Indexing Structures for Files}{\textStrech}{
+	\subsubsection*{5. Multilevel index}
+	Idea: Create a primary index to the index itself.
+	
+	We can repeat the process, creating a third, fourth... until all entries of the top level fit in one disk block.
+	
+	
+	Insertion and deletion is a problem.
+	
+	
+	\includegraphics[width=1\linewidth]{figures/2-56}
+	
+	\subsubsection*{6. Dynamic Multilevel indexes using B-Tree and B+-Tree}
+	
+	Each node correspond to a disk block, is kept between half-full and completely full.
+	
+	 In a B-Tree, pointers to data records exist at all levels of
+	the tree.
+	
+	
+	In a B+-Tree, all pointers to data records exist at the
+	leaf-level nodes.
+	
+	
+	A B+-Tree can have less levels (or higher capacity of
+	search values) than the corresponding B-tree.
+}
