@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.8)  27 DEC 2025 23:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.8)  29 DEC 2025 17:08
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1804,16 +1804,52 @@ Package pdftex.def Info: figures/2-56.png  used on input line 68.
 [7 <./figures/2-45.png> <./figures/2-46.png> <./figures/2-49.png> <./figures/2-
 48.png> <./figures/2-47.png> <./figures/2-50.png> <./figures/2-52.png> <./figur
 es/2-51.png>]) (chapters/ch7.tex
-Overfull \hbox (2.09277pt too wide) in paragraph at lines 68--1
+<figures/7-1.png, id=147, 308.352pt x 299.31825pt>
+File: figures/7-1.png Graphic file (type png)
+<use figures/7-1.png>
+Package pdftex.def Info: figures/7-1.png  used on input line 39.
+(pdftex.def)             Requested size: 115.99416pt x 112.59573pt.
+<figures/7-2.png, id=148, 404.10976pt x 305.34074pt>
+File: figures/7-2.png Graphic file (type png)
+<use figures/7-2.png>
+Package pdftex.def Info: figures/7-2.png  used on input line 39.
+(pdftex.def)             Requested size: 111.3534pt x 84.13435pt.
+<figures/7-3.png, id=149, 476.982pt x 302.3295pt>
+File: figures/7-3.png Graphic file (type png)
+<use figures/7-3.png>
+Package pdftex.def Info: figures/7-3.png  used on input line 39.
+(pdftex.def)             Requested size: 111.3534pt x 70.57689pt.
+
+Overfull \hbox (2.09277pt too wide) in paragraph at lines 68--40
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--1
-
+Overfull \hbox (2.09277pt too wide) in paragraph at lines 68--40
+[] 
  []
 
-)
+<figures/7-4.png, id=150, 432.4155pt x 302.3295pt>
+File: figures/7-4.png Graphic file (type png)
+<use figures/7-4.png>
+Package pdftex.def Info: figures/7-4.png  used on input line 78.
+(pdftex.def)             Requested size: 185.59135pt x 129.75926pt.
+<figures/7-5.png, id=151, 421.575pt x 130.086pt>
+File: figures/7-5.png Graphic file (type png)
+<use figures/7-5.png>
+Package pdftex.def Info: figures/7-5.png  used on input line 78.
+(pdftex.def)             Requested size: 185.59135pt x 57.26778pt.
+<figures/7-6.png, id=152, 425.1885pt x 111.41624pt>
+File: figures/7-6.png Graphic file (type png)
+<use figures/7-6.png>
+Package pdftex.def Info: figures/7-6.png  used on input line 78.
+(pdftex.def)             Requested size: 185.59135pt x 48.63397pt.
+
+Overfull \hbox (2.09277pt too wide) in paragraph at lines 78--79
+[][] 
+ []
+
+
 
 
 
@@ -1822,20 +1858,108 @@ Underfull \hbox (badness 10000) in paragraph at lines 68--1
 
 
 [8 <./figures/2-53.png> <./figures/2-54.png> <./figures/2-55.png> <./figures/2-
-56.png>] (main.aux)
+56.png> <./figures/7-1.png> <./figures/7-2.png> <./figures/7-3.png>]
+Overfull \hbox (2.09277pt too wide) in paragraph at lines 93--94
+[][] 
+ []
+
+<figures/7-7.png, id=163, 455.90324pt x 308.95425pt>
+File: figures/7-7.png Graphic file (type png)
+<use figures/7-7.png>
+Package pdftex.def Info: figures/7-7.png  used on input line 103.
+(pdftex.def)             Requested size: 162.39111pt x 110.04959pt.
+<figures/7-8.png, id=164, 455.301pt x 274.02374pt>
+File: figures/7-8.png Graphic file (type png)
+<use figures/7-8.png>
+Package pdftex.def Info: figures/7-8.png  used on input line 103.
+(pdftex.def)             Requested size: 162.39111pt x 97.73277pt.
+<figures/7-9.png, id=165, 473.3685pt x 351.11176pt>
+File: figures/7-9.png Graphic file (type png)
+<use figures/7-9.png>
+Package pdftex.def Info: figures/7-9.png  used on input line 103.
+(pdftex.def)             Requested size: 162.39111pt x 120.4479pt.
+<figures/7-10.png, id=166, 486.01575pt x 332.442pt>
+File: figures/7-10.png Graphic file (type png)
+<use figures/7-10.png>
+Package pdftex.def Info: figures/7-10.png  used on input line 103.
+(pdftex.def)             Requested size: 162.39111pt x 111.08087pt.
+<figures/7-11.png, id=167, 438.438pt x 314.3745pt>
+File: figures/7-11.png Graphic file (type png)
+<use figures/7-11.png>
+Package pdftex.def Info: figures/7-11.png  used on input line 103.
+(pdftex.def)             Requested size: 162.39111pt x 116.44145pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--103
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--103
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--103
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--103
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--103
+[] \T5/cmr/m/n/6 A dig-i-tal cer-
+ []
+
+
+Overfull \hbox (2.09277pt too wide) in paragraph at lines 103--104
+[][] 
+ []
+
+)
+Overfull \hbox (2.09277pt too wide) in paragraph at lines 146--32
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 146--32
+
+ []
+
+
+
+
+
+
+
+
+
+[9 <./figures/7-4.png> <./figures/7-5.png> <./figures/7-6.png> <./figures/7-7.p
+ng> <./figures/7-8.png> <./figures/7-9.png> <./figures/7-10.png> <./figures/7-1
+1.png>]
+
+
+
+
+
+
+
+[10] (main.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-10-09>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 22578 strings out of 468251
- 441522 string characters out of 5440056
- 827874 words of memory out of 5000000
- 50644 multiletter control sequences out of 15000+600000
+ 22702 strings out of 468251
+ 444138 string characters out of 5440056
+ 827876 words of memory out of 5000000
+ 50768 multiletter control sequences out of 15000+600000
  637978 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,18n,131p,429b,1065s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,18n,131p,429b,1082s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Admin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 0600.pk><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmmi5.pfb><C:/Users/Admin/AppData/Local/Programs/MiKTeX/fonts/type1/publi
@@ -1851,9 +1975,9 @@ ams/MiKTeX/fonts/type1/vntex/vnr/vnr10.pfb><C:/Users/Admin/AppData/Local/Progra
 ms/MiKTeX/fonts/type1/vntex/vnr/vnr6.pfb><C:/Users/Admin/AppData/Local/Programs
 /MiKTeX/fonts/type1/vntex/vnr/vnti7.pfb><C:/Users/Admin/AppData/Local/Programs/
 MiKTeX/fonts/type1/vntex/vnr/vntt8.pfb>
-Output written on main.pdf (8 pages, 4936885 bytes).
+Output written on main.pdf (10 pages, 5781854 bytes).
 PDF statistics:
- 212 PDF objects out of 1000 (max. 8388607)
+ 241 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 288 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 343 words of extra memory for PDF output out of 10000 (max. 10000000)
 

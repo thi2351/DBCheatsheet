@@ -1,0 +1,146 @@
+\cheatbox{Ch7. Database Security}{\textStrech}{
+	\subsubsection*{Discretionary Access Control (DAC)}
+	- User can protect what they own. Owner may grant access to other, can define the type of access (read/write/execute) given to others.
+	
+	- Type of Discretionary Privileges:
+	
+	The account level: DBA specifies the particular privileges that each account holds independently of the relations in the database. (include: CREATE SCHEMA/TABLE/VIEW, ALTER, DROP, MODIFY, SELECT)
+	
+	The relation level: DBA control the privilege to access each individual relation or view in the database. (SELECT on R, REFERENCES on R but can also be restricted to specific attributes of R, MODIFY on R).
+	
+	Note: To create a view, account must have SELECT privilege on all relations involved in the view definition.
+	
+	Access matrix model:
+	
+	\includegraphics[width=0.5\linewidth]{figures/7-1}
+	
+	S: subject (users), O: object.
+	
+	The owner of a relation is given all privileges on that relation. The owner can granting/revoking privileges to other users.
+	
+	
+	Important discretionary authorization mechanism:
+	- If A (owner of R), wants B to be able to retrieve only some fields and/or some records of R, A can create a view V of R that includes only those attributes and grant SELECT on V to B.
+	
+	Propagation of Privileges using GRANT OPTION: 
+	If: A -> B -> C -> ... A revokes privilege granted to B, all privileges B propagated based on that privilege automatically be revoked by the system.
+	
+	\includegraphics[width=0.48\linewidth]{figures/7-2}
+	\hfill
+	\includegraphics[width=0.48\linewidth]{figures/7-3}
+	
+	Trojan Horses attack: Dùng script trông có vẻ vô hại chạy dưới quyền của user hợp lệ để âm thầm sao chép dữ liệu nhạy cảm.
+	
+	Điểm mạnh: Linh hoạt, phù hợp phần lớn môi trường.
+	
+	Điểm yếu: Dễ bị tấn công.
+	
+	Thường được áp dụng nhiều hơn do trade-off giữa security và applicability.
+}
+
+\cheatbox{Ch7. Database Security}{\textStrech}{
+	\subsubsection*{Mandatory Access Control (MAC)}
+	- Granting access to the data on the basis of users' clearance level and the sensitivity level of the data..
+	Bell-Lapadula's 2 principles: no read-up \& no write-down. Tức là user có quyền thấp không được đọc tài liệu bí mật cao, và user có quyền cao không được viết xuống tài liệu bí mật thấp hơn.
+	
+	- Typical security classes: Top secret (TS) >= secret (S) >= confidential (C) >= unclassified (U).
+	
+	In MAC, each attribute A associate with a classification attribute C. A tuple classification attribute TC is to provide a classification for each tuple as a whole, the highest of all attribute classification values.
+	
+	\includegraphics[width=0.8\linewidth]{figures/7-4}
+	
+	\includegraphics[width=0.8\linewidth]{figures/7-5}
+	
+	\includegraphics[width=0.8\linewidth]{figures/7-6}
+	
+	Should satisfy:
+	
+	\begin{itemize}[leftmargin=*, itemsep=0pt, topsep=0pt]
+		\item \textbf{Read and write operations} must comply with the \textit{No Read-Up} and \textit{No Write-Down} rules.
+		
+		\item \textbf{Entity integrity} requires that all attributes forming the \textit{apparent key} (apparent key = primary key khi chuyển sang MAC):
+		\begin{itemize}[leftmargin=*, itemsep=0pt, topsep=0pt]
+			\item are \textbf{NOT NULL}, and
+			\item have the \textbf{same security classification} within each tuple.
+		\end{itemize}
+		
+		\item All \textbf{non-key attributes} in a tuple must have a security classification \textbf{greater than or equal to} that of the apparent key.
+		
+		\item This constraint ensures that \textbf{if a user can see any part of a tuple, the key is always visible}.
+		
+		\item \textbf{Polyinstantiation} allows multiple tuples with the same apparent key to exist, each visible to users at different security levels.
+	\end{itemize}
+	
+	Điểm mạnh: Bảo mật cao.
+	
+	Điểm yếu: Quá strictly, chỉ áp dụng được cho một số môi trường hạn chế.
+	
+}
+
+\cheatbox{Ch7. Database Security}{\textStrech}{
+	\subsubsection*{Role-based Access Control (RBAC)}
+	
+	\textbf{Role-Based Access Control (RBAC)} emerged in the 1990s as a proven technology for managing and enforcing security in large-scale enterprise systems.
+	
+	RBAC is based on the principle that \textbf{permissions are assigned to roles}, and \textbf{users are assigned to appropriate roles}. Roles can be created and managed using \texttt{CREATE ROLE} and \texttt{DESTROY ROLE} commands, while privileges are assigned and revoked using the standard \texttt{GRANT} and \texttt{REVOKE} commands.
+	
+	RBAC provides a practical alternative to traditional \textbf{Discretionary Access Control (DAC)} and \textbf{Mandatory Access Control (MAC)}, ensuring that only authorized users can access specific data or resources. Many DBMSs support roles, enabling privilege management at the role level rather than per individual user.
+	
+	RBAC supports \textbf{role hierarchies}, which naturally reflect an organization’s lines of authority and responsibility. It can also enforce \textbf{temporal constraints}, such as time-limited role activation, role duration, and role triggering based on the activation of other roles.
+	
+	Due to its flexibility, scalability, and support for enterprise and web-based security requirements, RBAC is considered more suitable than DAC and MAC for modern, large-scale, and Web-based applications.
+	
+}
+
+
+\cheatbox{Ch7. Database Security}{\textStrech}{
+\includegraphics[width=0.7\linewidth]{figures/7-7}
+\includegraphics[width=0.7\linewidth]{figures/7-8}
+\includegraphics[width=0.7\linewidth]{figures/7-9}
+\includegraphics[width=0.7\linewidth]{figures/7-10}
+\includegraphics[width=0.7\linewidth]{figures/7-11}
+A digital certificate include: A public key, Certificate info (identifying information such as name, ID), One (or more) digital signatures.
+}
+
+\cheatbox{Ch8. NoSQL}{\textStrech}{
+\begin{itemize}[leftmargin=*, itemsep=0pt, topsep=0pt]
+	\item \textbf{Big Data}: \textit{Volume, Velocity, Variety, Veracity}.
+	
+	\item \textbf{NoSQL}:
+	\begin{itemize}[leftmargin=*, itemsep=0pt, topsep=0pt]
+		\item Related to distributed database / storage systems. Focus on semi-structured data storage, high performance, availability, data replication, and scalability.
+		\item NoSQL does not require a fixed schema, has less powerful query languages, and supports versioning.
+		\item Categories:
+		\begin{itemize}[leftmargin=*, itemsep=0pt, topsep=0pt]
+			\item Document-based
+			\item Key--value stores
+			\item Column-based / wide-column
+			\item Graph-based
+			\item Hybrid
+		\end{itemize}
+	\end{itemize}
+	
+	\item \textbf{Document-based} (MongoDB):
+	\begin{itemize}[leftmargin=*, itemsep=0pt, topsep=0pt]
+		\item Data stored in Binary JSON (\textbf{BSON}) format.
+	\end{itemize}
+	
+	\item \textbf{Key--value stores} (DynamoDB, Oracle Key--Value Store, Redis key--value cache and store, Apache Cassandra):
+	\begin{itemize}[leftmargin=*, itemsep=0pt, topsep=0pt]
+		\item Focus on high performance, availability, and scalability.
+		\item Can store structured, semi-structured, and unstructured data.
+		\item \textbf{Key}: unique identifier used for fast retrieval.
+		\item \textbf{Value}: data.
+		\item No query language.
+	\end{itemize}
+	
+	\item \textbf{Column-based / wide-column} (Google BigTable, Apache HBase).
+	
+	\item \textbf{Graph-based} (Neo4j):
+	\begin{itemize}[leftmargin=*, itemsep=0pt, topsep=0pt]
+		\item Data represented as a graph, a collection of vertices and edges.
+		\item Possible to store data associated with both individual nodes and individual edges.
+	\end{itemize}
+\end{itemize}
+
+}
