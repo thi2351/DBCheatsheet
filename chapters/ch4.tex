@@ -181,4 +181,106 @@ Note: Alter Table lúc drop attribute/constraint cũng có quy tắc tương t�
 		Specifies the order of the output \\
 		\hline
 	\end{tabular}
+
+
+	\textbf{Filtering Operators}: Used in the \texttt{WHERE} clause to filter rows based on specific conditions.
+	\begin{itemize}
+		\item \textbf{Comparison}: \texttt{=, <>, <, >, <=, >=}
+		\item \textbf{Range}: \texttt{BETWEEN val1 AND val2} (Inclusive).
+		\item \textbf{List}: \texttt{IN (v1, v2, ...)} or \texttt{NOT IN (...)}.
+		\item \textbf{Null Check}: \texttt{IS NULL} (checks for missing value) or \texttt{IS NOT NULL}.
+		\item \textbf{Pattern Matching (LIKE)}:
+		\begin{itemize}
+			\item \texttt{\%}: Matches any string of zero or more characters.
+			\item \texttt{\_}: Matches exactly one character.
+		\end{itemize} 
+	\end{itemize}
+
+	\textbf{Join Operations}: Combines rows from two or more tables based on a related column.
+	\begin{itemize}
+		\item \textbf{INNER JOIN}: Returns rows when there is a match in both tables.
+		\item \textbf{LEFT (OUTER) JOIN}: Returns all rows from the left table, and the matched rows from the right table (NULL if no match).
+		\item \textbf{RIGHT (OUTER) JOIN}: Returns all rows from the right table, and the matched rows from the left table.
+		\item \textbf{CROSS JOIN}: Returns the Cartesian product (all combinations of rows).
+	\end{itemize}
+
+}
+
+\cheatbox{Ch4. SQL Language}{\textStrech}{
+
+	\textbf{Nested Queries (Subqueries)}: A query nested inside another query, typically in the \texttt{WHERE}, \texttt{FROM}, or \texttt{SELECT} clause.
+	\begin{itemize}
+		\item \textbf{Uncorrelated}: Inner query runs once and returns a value/set to the outer query.
+		\item \textbf{Correlated}: Inner query runs repeatedly, once for each row of the outer query. Uses \texttt{EXISTS} / \texttt{NOT EXISTS}.
+	\end{itemize}
+
+	\textbf{Set Operations}: Combines the result sets of two or more SELECT statements. Requires union compatibility (same number of columns and compatible data types).
+	\begin{itemize}
+		\item \texttt{UNION [ALL]}: Combines unique rows from both queries (\texttt{ALL} includes duplicates).
+		\item \texttt{INTERSECT}: Returns distinct rows output by both queries.
+		\item \texttt{EXCEPT} (or \texttt{MINUS}): Returns distinct rows from the first query that are not in the second.
+	\end{itemize}
+
+	\textbf{Aggregate Functions}: Performs a calculation on a set of values and returns a single scalar value. Often used with \texttt{GROUP BY}.
+	\begin{itemize}
+		\item \texttt{COUNT(col)}: Counts rows (non-null values).
+		\item \texttt{SUM(col)}: Calculates the sum of a numeric column.
+		\item \texttt{AVG(col)}: Calculates the average value.
+		\item \texttt{MIN(col) / MAX(col)}: Finds the minimum / maximum value.
+	\end{itemize}
+
+	\textbf{INSERT STATEMENT}
+
+	Used to add single or multiple rows to a table.
+	\begin{itemize}
+		\item \textbf{Single Row (Explicit Columns)}:
+		\texttt{INSERT INTO TableName (col1, col2, ...)}
+		\texttt{VALUES (val1, val2, ...);}
+		Useful when only specific attributes are assigned values. Unspecified attributes must either have a DEFAULT value or allow NULL.
+		
+		\item \textbf{Single Row (All Columns)}:
+		\texttt{INSERT INTO TableName VALUES (val1, val2, ...);}
+		Values must be provided for every column in the exact order specified in the table creation.
+		
+		\item \textbf{Multiple Rows (From Query)}:
+		\texttt{INSERT INTO TableName [(col\_list)]}
+		\texttt{SELECT ... FROM ... [WHERE ...];}
+		Used to load a table with the result set of a query from other tables. The data types and number of columns in the projection must match the target list.
+	\end{itemize}
+	
+	\textbf{Constraints Checked}:
+	The DBMS enforces all DDL constraints during execution.
+	\begin{itemize}
+		\item \textbf{Domain Constraints}: Data types must be compatible.
+		\item \textbf{Entity Integrity}: Primary key cannot be NULL or duplicate.
+		\item \textbf{Referential Integrity}: Foreign keys must match existing parent values or be NULL (if allowed).
+		\item \textbf{NOT NULL / UNIQUE / CHECK}: All values must satisfy these conditions.
+	\end{itemize}
+}
+
+\cheatbox{Ch4. SQL Language}{\textStrech}{
+	\textbf{UPDATE (Modify Data)}
+	Used to modify attribute values of one or more selected tuples in a table.
+	\begin{itemize}
+		\item \textbf{Syntax}:
+		\texttt{UPDATE TableName SET col1 = val1, col2 = val2, ... [WHERE condition];}
+		
+		\item \textbf{Behavior}:
+		The \texttt{WHERE} clause selects the tuples to be modified. If the \texttt{WHERE} clause is missing, all tuples in the relation are updated.
+		The \texttt{SET} clause specifies the attributes to be modified and their new values.
+		Updating a Primary Key value may propagate to Foreign Key values in other relations if referential triggered actions (like \texttt{ON UPDATE CASCADE}) are specified in the DDL.
+	\end{itemize}
+
+	\textbf{DELETE (Remove Data)}
+	Used to remove tuples (rows) from a relation.
+	\begin{itemize}
+		\item \textbf{Syntax}:
+		\texttt{DELETE FROM TableName [WHERE condition];}
+		
+		\item \textbf{Behavior}:
+		Includes a \texttt{WHERE} clause to select the tuples to be deleted.
+		A missing \texttt{WHERE} clause specifies that all tuples in the relation are to be deleted; however, the table definition remains in the database (it becomes an empty table).
+		\texttt{DROP TABLE} is used to remove the table definition entirely.
+		Deletion may propagate to tuples in other relations if referential integrity constraints (like \texttt{ON DELETE CASCADE}) are defined.
+	\end{itemize}
 }

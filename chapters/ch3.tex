@@ -218,5 +218,47 @@
 \includegraphics[width=1\linewidth]{../figures/2-39}
 % TODO: \usepackage{graphicx} required
 \includegraphics[width=1\linewidth]{../figures/2-40}
+\cheatbox{Ch3. Relational Data Model}{\textStrech}{
+\textbf{ER-to-Relational Mapping Algorithm}
+\begin{enumerate}
+    \item \textbf{Mapping of Regular Entity Types:} 
+    Create a relation $R$ for each regular entity type. Include all simple attributes. Choose one key attribute as the Primary Key ($PK$).
 
+    \item \textbf{Mapping of Weak Entity Types:} 
+    Create a relation $R$ with all simple attributes of the weak entity. Include the $PK$ of the owner entity as a Foreign Key ($FK$). 
+    \textit{PK of R} = $FK_{Owner}$ + Partial Key of the weak entity.
+
+    \item \textbf{Mapping of Binary 1:1 Relationship Types:} 
+    \begin{itemize}
+        \item \textit{Foreign Key Approach:} Add the $PK$ of one entity (preferably the one with total participation) as a $FK$ in the other relation.
+        \item \textit{Merged Relation Approach:} Combine both entities into a single relation (possible if both participations are total).
+        \item \textit{Cross-Reference Approach:} Create a separate relationship relation with foreign keys to both entities.
+    \end{itemize}
+
+    \item \textbf{Mapping of Binary 1:N Relationship Types:} 
+    Identify the relation at the \textbf{N-side}. Add the $PK$ of the \textbf{1-side} relation as a $FK$ in the N-side relation.
+
+    \item \textbf{Mapping of Binary M:N Relationship Types:} 
+    Create a new relation $S$ to represent the relationship. Include the $PKs$ of both participating entities as $FKs$ in $S$. The combination of these $FKs$ forms the $PK$ of $S$.
+
+    \item \textbf{Mapping of Multivalued Attributes:} 
+    Create a new relation $R$. Include the multivalued attribute and the $PK$ of the parent entity as a $FK$. 
+    \textit{PK of R} = The combination of the attribute value and the $FK$.
+
+    \item \textbf{Mapping of N-ary Relationship Types ($n > 2$):} 
+    Create a new relation $S$. Include the $PKs$ of all participating entity types as $FKs$. The $PK$ of $S$ is usually the combination of these foreign keys.
+
+    \item \textbf{Mapping of Specialization or Generalization:} 
+    Convert based on constraints (Disjoint/Overlapping, Total/Partial):
+    \begin{itemize}
+        \item \textit{Multiple relations:} Superclass table + Subclass tables (with Superclass PK).
+        \item \textit{Multiple relations:} Subclass tables only (containing all attributes).
+        \item \textit{Single relation:} One table with a type discriminator attribute.
+        \item \textit{Single relation:} One table with multiple boolean flags.
+    \end{itemize}
+
+    \item \textbf{Mapping of Union Types (Categories):} 
+    Create a surrogate key for the category relation. Add this surrogate key as a $FK$ to each superclass relation.
+\end{enumerate}
+}
 
